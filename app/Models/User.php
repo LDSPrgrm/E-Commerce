@@ -71,6 +71,14 @@ class User extends Authenticatable implements FilamentUser
             return str_ends_with($this->email, '@admin.com');
         }
 
+        if ($panel->getId() === 'seller') {
+            return str_ends_with($this->email, '@seller.com');
+        }
+
+        if ($panel->getId() === 'customer') {
+            return str_ends_with($this->email, '@gmail.com');
+        }
+
         return true;
     }
 }
